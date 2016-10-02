@@ -1,0 +1,43 @@
+
+
+<ehcache xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:SchemaLocation="http://ehcache.org/ehcache.xsd">
+    
+    <defaultCache
+maxElementsInMemory="100"
+eternal="true"
+timeToIdleSeconds="0"
+timeToLiveSeconds="100"
+overflowToDisk="false"
+statistics="true"
+/>
+
+<!-- <cache name="ItalianDSCache"
+        eternal="true"
+        maxElementsInMemory="100"
+        overflowToDisk="false"
+        diskPersistent="false"
+        memoryStoreEvictionPolicy="LRU"
+        timeToLiveSeconds="100"
+        statistics="true"
+        />-->
+
+    <cache name="ResevalMashCache"
+        eternal="true"
+        maxElementsInMemory="100"
+        overflowToDisk="false"
+        diskPersistent="false"
+        memoryStoreEvictionPolicy="LRU"
+        timeToLiveSeconds="100"
+        statistics="true"
+        />
+<!--        overflowToOffHeap="true"-->
+  <!--      maxMemoryOffHeap="10M" -->
+  
+        <!-- timeToIdleSeconds: Time from last access -->
+        <!-- timeToLiveSeconds: Time from creation (1 day) -->
+     
+    
+    <cacheManagerPeerListenerFactory class="org.terracotta.ehcachedx.monitor.probe.ProbePeerListenerFactory"
+    properties="monitorAddress=localhost, monitorPort=9889, memoryMeasurement=true"/>
+
+</ehcache>
